@@ -17,5 +17,9 @@ class DataLoad:
     def all_to_num(self):
         self.data_frame = self.data_frame.astype('float64')
 
-    def get_data(self, data_column):
-        return self.data_frame[data_column].values
+    def get_x(self):
+        return self.data_frame.drop(columns = ["stress_level"]).values
+
+    def get_y(self):
+        return self.data_frame["stress_level"].values
+
